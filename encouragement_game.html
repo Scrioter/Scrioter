@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encouragement Game</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    .message {
+      margin-bottom: 20px;
+    }
+    .card {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="message">
+    <h2>Do you have problems?</h2>
+    <button onclick="showResponse('No')">No</button>
+    <button onclick="showResponse('Yes')">Yes</button>
+  </div>
+
+  <div class="card" id="responseNo">
+    <p>Then why do you have to worry?</p>
+  </div>
+
+  <div class="card" id="responseYes">
+    <div class="message">
+      <p>Open</p>
+      <button onclick="openCard()">Open</button>
+    </div>
+    <div id="encouragementCard" class="card">
+      <p>I know things might seem challenging right now, but I want you to remember that challenges are temporary. Life has a way of working itself out, and even in the midst of difficulties, there's a strength within you that can overcome. I believe in your resilience and the ability to navigate through tough times.</p>
+      <p>It's okay to feel overwhelmed, but don't forget the countless times you've overcome obstacles in the past. This, too, shall pass. Reach out for support when you need it, and take things one step at a time. You're not alone, and together, we can get through anything. Remember, the darkest nights often lead to the brightest mornings.</p>
+    </div>
+  </div>
+
+  <script>
+    function showResponse(response) {
+      document.getElementById('responseNo').style.display = response === 'No' ? 'block' : 'none';
+      document.getElementById('responseYes').style.display = response === 'Yes' ? 'block' : 'none';
+    }
+
+    function openCard() {
+      document.getElementById('encouragementCard').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
